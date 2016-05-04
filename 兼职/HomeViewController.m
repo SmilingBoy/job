@@ -12,6 +12,8 @@
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong)UIView *kindInfoView;
+//消息列表
+@property (nonatomic, strong)UITableView *msgTableView;
 
 @end
 
@@ -22,11 +24,25 @@
     
     self.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
     
+    
+    //消息列表
+    _msgTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    
+    [self.view addSubview:_msgTableView];
+    
+    _msgTableView.delegate = self;
+    _msgTableView.dataSource = self;
+    
+    _msgTableView.backgroundColor = [UIColor clearColor];
+    
+    
+    
     //自定义顶部标题视图
     [self setNavigationTitleView];
     
     //定义导航栏tableView
     [self kindOfInfoView];
+
     
 }
 
@@ -88,7 +104,7 @@
 
 }
 
-#warning TODO
+//#warning TODO
 //信息选择视图中按钮监听
 -  (void)kindInfoViewButtonClick:(UIButton *)sender{
     
@@ -111,13 +127,21 @@
 #pragma mark tableView data
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return 3;
+    return 30;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    static NSString *reuserIndentiFier = @"reuse";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuserIndentiFier];
+    
+    if (!cell) {
+        
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuserIndentiFier];
+        
+    }
     
     cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
     return cell;

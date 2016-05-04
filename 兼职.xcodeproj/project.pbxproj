@@ -18,6 +18,7 @@
 		E92BDC4C1CDA107800C5E513 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BDC3E1CDA107800C5E513 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		E92BDC4D1CDA107800C5E513 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BDC401CDA107800C5E513 /* View+MASAdditions.m */; };
 		E92BDC4E1CDA107800C5E513 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BDC431CDA107800C5E513 /* ViewController+MASAdditions.m */; };
+		E92BDC511CDA236500C5E513 /* HomeMsgInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E92BDC501CDA236500C5E513 /* HomeMsgInfo.m */; };
 		E9BD20711CD8B33F00B0FEDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD20701CD8B33F00B0FEDB /* main.m */; };
 		E9BD20741CD8B33F00B0FEDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD20731CD8B33F00B0FEDB /* AppDelegate.m */; };
 		E9BD207C1CD8B33F00B0FEDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9BD207B1CD8B33F00B0FEDB /* Assets.xcassets */; };
@@ -77,6 +78,8 @@
 		E92BDC411CDA107800C5E513 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		E92BDC421CDA107800C5E513 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		E92BDC431CDA107800C5E513 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		E92BDC4F1CDA236500C5E513 /* HomeMsgInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMsgInfo.h; sourceTree = "<group>"; };
+		E92BDC501CDA236500C5E513 /* HomeMsgInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMsgInfo.m; sourceTree = "<group>"; };
 		E9BD206C1CD8B33F00B0FEDB /* 兼职.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "兼职.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BD20701CD8B33F00B0FEDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9BD20721CD8B33F00B0FEDB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 		04EA7DCA1CD95E08005E0DAE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E92BDC4F1CDA236500C5E513 /* HomeMsgInfo.h */,
+				E92BDC501CDA236500C5E513 /* HomeMsgInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				E9BD20A81CD8B67000B0FEDB /* HomeViewController.m in Sources */,
 				E92BDC4B1CDA107800C5E513 /* NSArray+MASAdditions.m in Sources */,
 				E92BDC4C1CDA107800C5E513 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				E92BDC511CDA236500C5E513 /* HomeMsgInfo.m in Sources */,
 				E9BD20B31CD8B8F600B0FEDB /* AddMsgViewController.m in Sources */,
 				E9BD20BC1CD8B9BD00B0FEDB /* MeViewController.m in Sources */,
 				E9BD20B71CD8B91900B0FEDB /* MessageViewController.m in Sources */,
