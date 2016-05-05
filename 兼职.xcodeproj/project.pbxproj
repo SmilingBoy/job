@@ -32,6 +32,7 @@
 		E9BD20B71CD8B91900B0FEDB /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD20B61CD8B91900B0FEDB /* MessageViewController.m */; };
 		E9BD20BC1CD8B9BD00B0FEDB /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD20BB1CD8B9BD00B0FEDB /* MeViewController.m */; };
 		E9BD20C11CD8C2BB00B0FEDB /* ZQButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BD20C01CD8C2BB00B0FEDB /* ZQButton.m */; };
+		E9E97DB21CDAEB1B0027588D /* ZQHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E97DB11CDAEB1B0027588D /* ZQHomeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,8 @@
 		E9BD20BD1CD8B9D200B0FEDB /* MeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MeViewController.h; path = "兼职/MeViewController.h"; sourceTree = "<group>"; };
 		E9BD20BF1CD8C2BB00B0FEDB /* ZQButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQButton.h; sourceTree = "<group>"; };
 		E9BD20C01CD8C2BB00B0FEDB /* ZQButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQButton.m; sourceTree = "<group>"; };
+		E9E97DB01CDAEB1B0027588D /* ZQHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZQHomeCell.h; path = "兼职/ZQHomeCell.h"; sourceTree = "<group>"; };
+		E9E97DB11CDAEB1B0027588D /* ZQHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZQHomeCell.m; path = "兼职/ZQHomeCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 		04EA7DC91CD95DFC005E0DAE /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				E9E97DB01CDAEB1B0027588D /* ZQHomeCell.h */,
+				E9E97DB11CDAEB1B0027588D /* ZQHomeCell.m */,
 			);
 			name = VIew;
 			sourceTree = "<group>";
@@ -687,6 +692,7 @@
 				E92BDC4E1CDA107800C5E513 /* ViewController+MASAdditions.m in Sources */,
 				E92BDC461CDA107800C5E513 /* MASConstraint.m in Sources */,
 				E9BD20A41CD8B4FE00B0FEDB /* MainTabBarController.m in Sources */,
+				E9E97DB21CDAEB1B0027588D /* ZQHomeCell.m in Sources */,
 				E9BD20A81CD8B67000B0FEDB /* HomeViewController.m in Sources */,
 				E92BDC4B1CDA107800C5E513 /* NSArray+MASAdditions.m in Sources */,
 				E92BDC4C1CDA107800C5E513 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,

@@ -11,7 +11,7 @@
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic, strong)UIView *kindInfoView;
+@property (nonatomic, strong)UIImageView *menu;
 //消息列表
 @property (nonatomic, strong)UITableView *msgTableView;
 
@@ -27,21 +27,16 @@
     
     //消息列表
     _msgTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    
     [self.view addSubview:_msgTableView];
     
     _msgTableView.delegate = self;
     _msgTableView.dataSource = self;
-    
     _msgTableView.backgroundColor = [UIColor clearColor];
     
     
     
     //自定义顶部标题视图
     [self setNavigationTitleView];
-    
-    //定义导航栏tableView
-    [self kindOfInfoView];
 
     
 }
@@ -50,63 +45,78 @@
 - (void)setNavigationTitleView{
     
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
-    
     self.navigationItem.titleView = button;
     
     [button setTitle:@"所有信息" forState:UIControlStateNormal];
-    
     button.backgroundColor = [UIColor lightGrayColor];
-    
-    [button addTarget:self action:@selector(showTableView:) forControlEvents:UIControlEventTouchUpInside];
-    
-}
-
-//显示kindInfoView
-- (void)showTableView:(UIButton *)sender{
-    
-    _kindInfoView.hidden = !_kindInfoView.hidden;
+    [button addTarget:self action:@selector(titleButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
-
-//信息选择视图
-- (void)kindOfInfoView{
+/**
+ *  懒加载menu
+ *
+ */
+-(UIImageView *)menu{
     
-    _kindInfoView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, 10)];
-    
-    [self.view addSubview:_kindInfoView];
-    
-    _kindInfoView.hidden = YES;
-    
-    _kindInfoView.backgroundColor = [UIColor redColor];
-    
-    [_kindInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
+    if (!_menu) {
         
-        make.centerX.offset(0);
-        make.top.offset(60);
-        make.width.mas_equalTo(100);
-        make.height.mas_equalTo(90);
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 65, 100, 100)];
         
-    }];
-    
-    NSArray *titleArray = @[@"所有",@"找兼职",@"招兼职"];
-    
-    for (int i = 0; i < 3; i++) {
-        UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, i * 30, 100, 30)];
-        [_kindInfoView addSubview:button];
         
-        button.tag = 100 + i;
+        CGPoint center = imageView.center;
+        center.x = [UIScreen mainScreen].bounds.size.width/2.0;
+        imageView.center = center;
         
-        [button setTitle:titleArray[i] forState:UIControlStateNormal];
+        [imageView setImage:[UIImage imageNamed:@"popover_background"]];
         
-        [button addTarget:self action:@selector(kindInfoViewButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+        _menu = imageView;
+        
+        //添加内部按钮
+        NSArray *titileArray = @[@"全部信息",@"找兼职",@"招兼职"];
+        
+        for (int i = 0; i < 3; i++) {
+            
+            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, i * 30 + 10, _menu.frame.size.width, 30)];
+            
+            [button setTitle:titileArray[i] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button addTarget:self action:@selector(menuButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [_menu addSubview:button];
+            
+        }
+        
+        
+        [self.view addSubview:_menu];
+        
     }
-
+    
+    return _menu;
+    
 }
+
+/**
+ *  点击标题
+ */
+- (void)titleButtonClick:(UIButton *)sender{
+    
+    
+    sender.selected = !sender.selected;
+    
+    if (sender.selected) {
+        self.menu.hidden = NO;
+    }else{
+        _menu.hidden = YES;
+    }
+    
+    
+}
+
 
 //#warning TODO
 //信息选择视图中按钮监听
--  (void)kindInfoViewButtonClick:(UIButton *)sender{
+-  (void)menuButtonClick:(UIButton *)sender{
     
     switch (sender.tag - 100) {
         case 0:
